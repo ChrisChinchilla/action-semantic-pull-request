@@ -12,7 +12,7 @@ module.exports = async function validatePrDescription(prDescription) {
         return;
     }
 
-    const docsChange = prDescription.match(/need or change documentation:\s+(yes|no)/i);
+    const docsChange = prDescription.match(/Does this change need or change documentation:\s+(yes|no)/i);
     if (!docsChange) {
         raiseError("PR description must answer prompt about documentation with 'yes' or 'no'");
     }
